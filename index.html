@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="timeForm" action="timer.html">
+            <label for="pomodoro">Pomodoro - Time:</label>
+            <input type="text" id="pomodoro" name="pomodoro" placeholder="Enter time in minutes" required><br><br>
+            <label for="break">Break - Time:</label>
+            <input type="text" id="break" name="break" placeholder="Enter time in minutes" required><br><br>
+            <input type="submit" value="Submit">
+          </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("timeForm");
+        form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const pomoVal = document.getElementById("pomodoro").value;
+        const breakVal = document.getElementById("break").value;
+        window.location.href = `timer.html?pomodoro=${pomoVal}&break=${breakVal}`;
+    });
+    </script>
+</body>
+</html>
